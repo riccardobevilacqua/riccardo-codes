@@ -1,6 +1,7 @@
 {
-  "name": "blog-starter",
+  "name": "riccardo-codes",
   "version": "1.0.0",
+  "private": true,
   "scripts": {
     "dev": "next",
     "build": "next build",
