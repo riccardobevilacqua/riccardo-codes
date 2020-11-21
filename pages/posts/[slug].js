@@ -9,6 +9,7 @@ import { getPostBySlug, getAllPosts } from '../../lib/api'
 import PostTitle from '../../components/post-title'
 import Head from 'next/head'
 import markdownToHtml from '../../lib/markdownToHtml'
+import { BLOG_TITLE } from '../../lib/constants'
 
 export default function Post({ post, morePosts, preview }) {
   const router = useRouter()
@@ -26,8 +27,8 @@ export default function Post({ post, morePosts, preview }) {
               <article className="mb-32">
                 <Head>
                   <title>
-                    {post.title} | Next.js Blog Example
-                </title>
+                    {post.title} | {BLOG_TITLE}
+                  </title>
                   <meta property="og:image" content={post.ogImage.url} />
                 </Head>
                 <PostHeader
