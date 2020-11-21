@@ -6,11 +6,11 @@ export default function PostHeader({ title, coverImage, date }) {
   return (
     <>
       <PostTitle>{title}</PostTitle>
-      <div className="mb-8 md:mb-16 sm:mx-0">
+      <div>
         <CoverImage title={title} src={coverImage} />
       </div>
-      <div className="max-w-2xl mx-auto">
-        <div className="mb-6 text-lg">
+      <div>
+        <div>
           <DateFormatter dateString={date} />
         </div>
       </div>

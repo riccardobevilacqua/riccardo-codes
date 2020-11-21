@@ -1,3 +1,7 @@
 export default function Container({ children }) {
-  return <div className="container mx-auto px-5">{children}</div>
+  return (
+    <section className="section">
+      <div className="container">{children}</div>
+    </section>
+  )
 }
