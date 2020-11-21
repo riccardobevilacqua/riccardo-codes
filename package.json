@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "bulma": "^0.9.1",
     "classnames": "2.2.6",
     "date-fns": "2.10.0",
     "gray-matter": "4.0.2",
@@ -17,6 +18,8 @@
     "remark": "11.0.2",
     "remark-html": "10.0.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "node-sass": "^5.0.0"
+  },
   "license": "MIT"
 }
