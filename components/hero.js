@@ -4,7 +4,7 @@ import { BLOG_TITLE, BLOG_SUBTITLE } from '../lib/constants'
 
 export default function Hero() {
   return (
-    <section className="hero is-dark is-bold">
+    <section className="hero">
       <Link href="/">
         <a>
           <div className="hero-body">
