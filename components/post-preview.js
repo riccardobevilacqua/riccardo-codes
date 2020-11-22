@@ -22,7 +22,9 @@ export default function PostPreview({
       <h4 className="subtitle">
         <DateFormatter dateString={date} />
       </h4>
-      <p>{excerpt}</p>
+      <div className="content is-medium">
+        <p>{excerpt}</p>
+      </div>
     </>
   )
 }

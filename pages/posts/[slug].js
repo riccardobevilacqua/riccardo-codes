@@ -32,7 +32,7 @@ export default function Post({ post }) {
                 coverImage={post.coverImage}
                 date={post.date}
               />
-              <div dangerouslySetInnerHTML={{ __html: post.content }} />
+              <div className="content is-medium" dangerouslySetInnerHTML={{ __html: post.content }} />
             </article>
           )}
       </Container>

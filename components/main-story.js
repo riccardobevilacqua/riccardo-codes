@@ -23,7 +23,9 @@ export default function MainStory({
       <h4 className="subtitle">
         <DateFormatter dateString={date} />
       </h4>
-      <p>{excerpt}</p>
+      <div className="content is-medium">
+        <p>{excerpt}</p>
+      </div>
     </Container>
   )
 }
