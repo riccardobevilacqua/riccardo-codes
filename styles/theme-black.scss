@@ -1,6 +1,6 @@
 @import "../node_modules/bulma/sass/utilities/initial-variables.sass";
 
-// General colors
+// General
 $scheme-main: $black;
 $scheme-main-bis: $black-bis;
 $scheme-main-ter: $black-ter;
@@ -15,13 +15,13 @@ $border-hover: $grey-dark;
 $border-light: $grey-darker;
 $border-light-hover: $grey-dark;
 
-// Text colors
+// Text
 $text: $grey-light;
 $text-invert: $grey-darker;
 $text-light: $grey;
 $text-strong: $white;
 
-// Link colors
+// Link
 $link: $white;
 
 $link-hover: $white;
@@ -33,7 +33,7 @@ $link-focus-border: $blue;
 $link-active: $white;
 $link-active-border: $grey-light;
 
-// Navbar colors
+// Navbar
 .bd-navbar {
   background-color: $scheme-main-bis;
 }
@@ -41,3 +41,11 @@ $link-active-border: $grey-light;
 .bd-navbar.has-shadow {
   box-shadow: none;
 }
+
+// Footer
+$footer-background-color: $scheme-main;
+$footer-padding: 1rem;
+
+// Cover
+
+

@@ -1,8 +1,8 @@
 import Head from 'next/head'
-import Container from '../components/container'
 import MoreStories from '../components/more-stories'
 import MainStory from '../components/main-story'
 import Layout from '../components/layout'
+import Footer from '../components/footer'
 import { getAllPosts } from '../lib/api'
 import { BLOG_TITLE } from '../lib/constants'
 
@@ -15,18 +15,18 @@ export default function Index({ allPosts }) {
         <Head>
           <title>{BLOG_TITLE}</title>
         </Head>
-        <Container>
-          {latestPost && (
-            <MainStory
-              title={latestPost.title}
-              coverImage={latestPost.coverImage}
-              date={latestPost.date}
-              slug={latestPost.slug}
-              excerpt={latestPost.excerpt}
-            />
-          )}
-          {morePosts.length > 0 && <MoreStories posts={morePosts} />}
-        </Container>
+
+        {latestPost && (
+          <MainStory
+            title={latestPost.title}
+            coverImage={latestPost.coverImage}
+            date={latestPost.date}
+            slug={latestPost.slug}
+            excerpt={latestPost.excerpt}
+          />
+        )}
+        {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+        <Footer />
       </Layout>
     </>
   )
