@@ -1,5 +1,5 @@
-import Container from '../components/container'
-import PostPreview from '../components/post-preview'
+import Container from '@components/container'
+import PostPreview from '@components/post-preview'
 
 export default function MoreStories({ posts }) {
   return (

@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-import { BLOG_TITLE, BLOG_SUBTITLE } from '../lib/constants'
+import { BLOG_TITLE, BLOG_SUBTITLE } from '@lib/constants'
 
 export default function Hero() {
   return (

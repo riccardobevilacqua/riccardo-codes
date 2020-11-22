@@ -1,10 +1,10 @@
 import Head from 'next/head'
-import MoreStories from '../components/more-stories'
-import MainStory from '../components/main-story'
-import Layout from '../components/layout'
-import Footer from '../components/footer'
-import { getAllPosts } from '../lib/api'
-import { BLOG_TITLE } from '../lib/constants'
+import MoreStories from '@components/more-stories'
+import MainStory from '@components/main-story'
+import Layout from '@components/layout'
+import Footer from '@components/footer'
+import { getAllPosts } from '@lib/api'
+import { BLOG_TITLE } from '@lib/constants'
 
 export default function Index({ allPosts }) {
   const latestPost = allPosts[0]

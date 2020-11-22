@@ -1,5 +1,5 @@
-import Meta from '../components/meta'
-import Hero from '../components/hero'
+import Meta from '@components/meta'
+import Hero from '@components/hero'
 
 export default function Layout({ children }) {
   return (

@@ -1,7 +1,7 @@
 import Link from 'next/link'
-import Container from '../components/container'
-import DateFormatter from '../components/date-formatter'
-import CoverImage from '../components/cover-image'
+import Container from '@components/container'
+import DateFormatter from '@components/date-formatter'
+import CoverImage from '@components/cover-image'
 
 export default function MainStory({
   title,

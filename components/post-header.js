@@ -1,5 +1,5 @@
-import DateFormatter from '../components/date-formatter'
-import CoverImage from '../components/cover-image'
+import DateFormatter from '@components/date-formatter'
+import CoverImage from '@components/cover-image'
 
 export default function PostHeader({ title, coverImage, date }) {
   return (

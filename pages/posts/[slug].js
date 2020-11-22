@@ -3,12 +3,12 @@ import ErrorPage from 'next/error'
 import Head from 'next/head'
 import Link from 'next/link'
 
-import { getAllPosts, getPostBySlug } from '../../lib/api'
-import markdownToHtml from '../../lib/markdownToHtml'
-import { BLOG_TITLE } from '../../lib/constants'
-import Container from '../../components/container'
-import PostHeader from '../../components/post-header'
-import Layout from '../../components/layout'
+import { getAllPosts, getPostBySlug } from '@lib/api'
+import markdownToHtml from '@lib/markdownToHtml'
+import { BLOG_TITLE } from '@lib/constants'
+import Container from '@components/container'
+import PostHeader from '@components/post-header'
+import Layout from '@components/layout'
 
 export default function Post({ post }) {
   const router = useRouter()
