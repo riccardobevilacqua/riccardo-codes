@@ -1,49 +1,6 @@
 @charset "utf-8";
 
-@import "../node_modules/bulma/sass/utilities/initial-variables.sass";
-
-// General colors
-$scheme-main: $black;
-$scheme-main-bis: $black-bis;
-$scheme-main-ter: $black-ter;
-$scheme-invert: $white;
-$scheme-invert-bis: $white-bis;
-$scheme-invert-ter: $white-ter;
-
-$background: $black-ter;
-
-$border: $grey-darker;
-$border-hover: $grey-dark;
-$border-light: $grey-darker;
-$border-light-hover: $grey-dark;
-
-// Text colors
-$text: $grey-light;
-$text-invert: $grey-darker;
-$text-light: $grey;
-$text-strong: $white;
-
-// Link colors
-$link: $white;
-
-$link-hover: $white;
-$link-hover-border: $grey-dark;
-
-$link-focus: $white;
-$link-focus-border: $blue;
-
-$link-active: $white;
-$link-active-border: $grey-light;
-
-// Navbar colors
-.bd-navbar {
-  background-color: $scheme-main-bis;
-}
-
-.bd-navbar.has-shadow {
-  box-shadow: none;
-}
-
+@import "./theme-black.scss";
 
 @import "../node_modules/bulma/sass/utilities/_all.sass";
 @import "../node_modules/bulma/sass/base/_all.sass";
