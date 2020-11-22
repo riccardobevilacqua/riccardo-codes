@@ -1,8 +1,9 @@
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
 import Head from 'next/head'
+import Link from 'next/link'
 
-import { getPostBySlug, getAllPosts } from '../../lib/api'
+import { getAllPosts, getPostBySlug } from '../../lib/api'
 import markdownToHtml from '../../lib/markdownToHtml'
 import { BLOG_TITLE } from '../../lib/constants'
 import Container from '../../components/container'
@@ -33,6 +34,9 @@ export default function Post({ post }) {
                 date={post.date}
               />
               <div className="content is-medium" dangerouslySetInnerHTML={{ __html: post.content }} />
+              <Link href="/" scroll={false}>
+                <a>&larr; Back</a>
+              </Link>
             </article>
           )}
       </Container>
