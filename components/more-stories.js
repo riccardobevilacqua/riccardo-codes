@@ -1,20 +1,23 @@
+import Container from '../components/container'
 import PostPreview from '../components/post-preview'
 
 export default function MoreStories({ posts }) {
   return (
-    <section>
-      <div>
+    <Container>
+      <div className="columns">
         {posts.map((post) => (
-          <PostPreview
-            key={post.slug}
-            title={post.title}
-            coverImage={post.coverImage}
-            date={post.date}
-            slug={post.slug}
-            excerpt={post.excerpt}
-          />
+          <div className="column" key={post.slug}>
+            <PostPreview
+              key={post.slug}
+              title={post.title}
+              coverImage={post.coverImage}
+              date={post.date}
+              slug={post.slug}
+              excerpt={post.excerpt}
+            />
+          </div>
         ))}
       </div>
-    </section>
+    </Container>
   )
 }

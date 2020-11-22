@@ -10,19 +10,17 @@ export default function PostPreview({
   slug,
 }) {
   return (
-    <div>
-      <div>
-        <CoverImage slug={slug} title={title} src={coverImage} />
-      </div>
-      <h3>
+    <>
+      <CoverImage title={title} src={coverImage} slug={slug} />
+      <h3 className="title">
         <Link as={`/posts/${slug}`} href="/posts/[slug]">
           <a>{title}</a>
         </Link>
       </h3>
-      <div>
+      <h4 className="subtitle">
         <DateFormatter dateString={date} />
-      </div>
+      </h4>
       <p>{excerpt}</p>
-    </div>
+    </>
   )
 }
