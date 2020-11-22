@@ -11,7 +11,9 @@ export default function PostPreview({
 }) {
   return (
     <>
-      <CoverImage title={title} src={coverImage} slug={slug} />
+      <div className="mb-4">
+        <CoverImage title={title} src={coverImage} slug={slug} />
+      </div>
       <h3 className="title">
         <Link as={`/posts/${slug}`} href="/posts/[slug]">
           <a>{title}</a>

@@ -6,10 +6,8 @@ import { getPostBySlug, getAllPosts } from '../../lib/api'
 import markdownToHtml from '../../lib/markdownToHtml'
 import { BLOG_TITLE } from '../../lib/constants'
 import Container from '../../components/container'
-import PostBody from '../../components/post-body'
 import PostHeader from '../../components/post-header'
 import Layout from '../../components/layout'
-import PostTitle from '../../components/post-title'
 
 export default function Post({ post }) {
   const router = useRouter()
@@ -20,24 +18,22 @@ export default function Post({ post }) {
     <Layout>
       <Container>
         {router.isFallback ? (
-          <PostTitle>Loading…</PostTitle>
+          <h1 className="title">Loading…</h1>
         ) : (
-            <>
-              <article>
-                <Head>
-                  <title>
-                    {post.title} | {BLOG_TITLE}
-                  </title>
-                  <meta property="og:image" content={post.ogImage.url} />
-                </Head>
-                <PostHeader
-                  title={post.title}
-                  coverImage={post.coverImage}
-                  date={post.date}
-                />
-                <PostBody content={post.content} />
-              </article>
-            </>
+            <article>
+              <Head>
+                <title>
+                  {post.title} | {BLOG_TITLE}
+                </title>
+                <meta property="og:image" content={post.ogImage.url} />
+              </Head>
+              <PostHeader
+                title={post.title}
+                coverImage={post.coverImage}
+                date={post.date}
+              />
+              <div dangerouslySetInnerHTML={{ __html: post.content }} />
+            </article>
           )}
       </Container>
     </Layout>

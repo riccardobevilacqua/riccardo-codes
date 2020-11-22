@@ -1,18 +1,15 @@
 import DateFormatter from '../components/date-formatter'
 import CoverImage from '../components/cover-image'
-import PostTitle from '../components/post-title'
 
 export default function PostHeader({ title, coverImage, date }) {
   return (
     <>
-      <PostTitle>{title}</PostTitle>
-      <div>
+      <h3 className="title">{title}</h3>
+      <h4 className="subtitle">
+        <DateFormatter dateString={date} />
+      </h4>
+      <div className="my-4">
         <CoverImage title={title} src={coverImage} />
-      </div>
-      <div>
-        <div>
-          <DateFormatter dateString={date} />
-        </div>
       </div>
     </>
   )
