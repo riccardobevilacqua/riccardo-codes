@@ -15,7 +15,7 @@ export default function MainStory({
       <div className="mb-4">
         <CoverImage title={title} src={coverImage} slug={slug} />
       </div>
-      <h3 className="title">
+      <h3 className="title is-size-1">
         <Link as={`/posts/${slug}`} href="/posts/[slug]">
           <a>{title}</a>
         </Link>

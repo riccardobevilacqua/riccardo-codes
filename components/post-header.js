@@ -4,7 +4,7 @@ import CoverImage from '@components/cover-image'
 export default function PostHeader({ title, coverImage, date }) {
   return (
     <>
-      <h3 className="title">{title}</h3>
+      <h3 className="title is-size-1">{title}</h3>
       <h4 className="subtitle">
         <DateFormatter dateString={date} />
       </h4>
