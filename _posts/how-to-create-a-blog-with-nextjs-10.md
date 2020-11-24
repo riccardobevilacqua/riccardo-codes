@@ -60,7 +60,7 @@ It looks pretty nice already, doesn't it?
 <img
   src="/assets/blog/how-to-create-a-blog-with-nextjs-10/nextjs-blog-starter-preview.jpeg"
   alt="Next.js blog starter, local preview"
-  style="max-height: 1000px;"
+  style="max-height: 600px;"
 />
 <figcaption>Next.js blog starter, local preview</figcaption>
 </figure>
@@ -73,7 +73,7 @@ Opening the project on your favorite editor (e.g. Visual Studio Code) you'd see 
 <img
   src="/assets/blog/how-to-create-a-blog-with-nextjs-10/nextjs-blog-starter-folder.jpg"
   alt="Next.js blog starter, folder structure"
-  style="max-height: 600px;"
+  style="max-height: 400px;"
 />
 <figcaption>Next.js blog starter, folder structure</figcaption>
 </figure>
@@ -105,7 +105,7 @@ For example, this post...
 <img
   src="/assets/blog/how-to-create-a-blog-with-nextjs-10/nextjs-blog-starter-sample-post-preview.jpeg"
   alt="Next.js blog starter, sample post preview"
-  style="max-height: 1000px;"
+  style="max-height: 600px;"
 />
 <figcaption>Next.js blog starter, sample post preview</figcaption>
 </figure>
@@ -120,7 +120,7 @@ Let's take a look at `pages`:
 <img
   src="/assets/blog/how-to-create-a-blog-with-nextjs-10/nextjs-blog-starter-pages.jpg"
   alt="Next.js blog starter, pages folder"
-  style="max-height: 350px;"
+  style="max-height: 200px;"
 />
 <figcaption>Next.js blog starter, pages folder</figcaption>
 </figure>
