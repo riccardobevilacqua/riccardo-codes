@@ -1,6 +1,6 @@
 ---
 title: 'How to create a blog with Next.js 10'
-excerpt: 'Vercel recently released Next.js 10, a stunning combination of power and simplicity. I''d like to share how I created this very blog with this amazing tool and show you how you can create your own.'
+excerpt: 'Vercel recently released Next.js 10, a stunning combination of power and simplicity. Here''s a step-by-step guide to create your blog with this amazing tool.'
 coverImage: '/assets/blog/how-to-create-a-blog-with-nextjs-10/cover.jpg'
 date: '2020-11-23'
 ogImage:
@@ -19,13 +19,13 @@ According to the official website:
 
 [Vercel](https://vercel.com/) recently released [Next.js 10](https://nextjs.org/blog/next-10), a stunning combination of power and simplicity.
 
-The popular rival [Gatsby](https://www.gatsbyjs.com/) provides a lot of features and a wide range of plugins, but the overhead and the compulsory use of GraphQL might be considered overengineering for some users.
+The popular rival [Gatsby](https://www.gatsbyjs.com/) provides a lot of features and a wide range of plugins, but the overhead and the compulsory use of GraphQL might be considered overengineering by some users.
 
 Gatsby still represents a valid tool, as usual it's a matter of trade off and personal taste.
 
 ### One small step
 
-Vercel provides nice [examples](https://github.com/vercel/next.js/tree/canary/examples/) to be used as templates for your projects.
+Vercel provides several [examples](https://github.com/vercel/next.js/tree/canary/examples/) to be used as templates for your projects.
 
 A good starting point is certainly [blog-starter](https://github.com/vercel/next.js/tree/canary/examples/blog-starter), which can be seen in action [here](https://next-blog-starter.now.sh/).
 
@@ -110,8 +110,46 @@ For example, this post...
 <figcaption>Next.js blog starter, sample post preview</figcaption>
 </figure>
 
+### Second star to the right
 
+Next.js has a file-system based routing, which detects subfolders and files in the special directory called `pages` creating routes accordingly.
 
+Let's take a look at `pages`:
 
+<figure class="image" aria-label="Next.js blog starter, pages folder">
+<img
+  src="/assets/blog/how-to-create-a-blog-with-nextjs-10/nextjs-blog-starter-pages.jpg"
+  alt="Next.js blog starter, pages folder"
+  style="max-height: 350px;"
+/>
+<figcaption>Next.js blog starter, pages folder</figcaption>
+</figure>
 
+It comprises the following files:
+
+- `index.js` is the homepage of the site
+- `_app.js` allows to introduce customization, such as styles, to be applied application wide
+- `_document.js` allows to restructure the document as in the whole HTML document encapsulating your application
+- `[slug].js` represents any given post, its name contains `[]` because it's leveraging dynamic routing
+
+When you create a post as Markdown file in `_post` folder, the file name determines implicitly the slug of your post.
+If your file is called `hello-world.md`, then its slug will be `hello-world`.
+
+Next.js takes the relative path `pages/blog/[slug].js` and generates the route `/blog/:slug`, which in this case would be `/blog/hello-world`.
+
+For further information please refer to [this documentation](https://nextjs.org/docs/routing/introduction).
+
+### And straight on till morning
+
+Feel free to explore the `components` folder and make changes to meet your needs.
+Since they're mere React components they will probably look familiar.
+
+### Conclusion
+
+Next.js is quite opinionated and might feel odd at first maybe, but its gracious learning curve and the elegant minimalistic API design make it a phenomenal tool to add to your belt.
+
+Setting aside personal tastes, Next.js is certainly worth your time.
+
+> The mystery of life isn't a problem to solve, but a reality to experience.  
+― Frank Herbert, Dune
 
