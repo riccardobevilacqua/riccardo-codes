@@ -42,8 +42,9 @@ export async function getStaticProps() {
     'author',
     'coverImage',
     'excerpt',
+    'content',
   ])
-  const rss = generateRss(allPosts)
+  const rss = await generateRss(allPosts)
 
   fs.writeFileSync('./public/rss.xml', rss)
 
