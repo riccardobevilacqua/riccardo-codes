@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { HOME_OG_IMAGE_URL, BLOG_DESCRIPTION } from '@lib/constants'
+import { HOME_OG_IMAGE_URL, BLOG_DESCRIPTION, BLOG_URL } from '@lib/constants'
 
 export default function Meta() {
   return (
@@ -37,6 +37,12 @@ export default function Meta() {
         content={BLOG_DESCRIPTION}
       />
       <meta property="og:image" content={HOME_OG_IMAGE_URL} key="feature-image"/>
+      <link
+        rel="alternate"
+        type="application/rss+xml"
+        title="RSS feed for blog posts"
+        href={[BLOG_URL, 'rss.xml'].join('/')}
+      />
     </Head>
   )
 }

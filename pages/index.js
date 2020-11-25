@@ -1,3 +1,4 @@
+import fs from 'fs'
 import Head from 'next/head'
 import MoreStories from '@components/more-stories'
 import MainStory from '@components/main-story'
@@ -5,6 +6,7 @@ import Layout from '@components/layout'
 import Footer from '@components/footer'
 import { getAllPosts } from '@lib/api'
 import { BLOG_TITLE } from '@lib/constants'
+import { generateRss } from '@lib/rss'
 
 export default function Index({ allPosts }) {
   const latestPost = allPosts[0]
@@ -41,6 +43,9 @@ export async function getStaticProps() {
     'coverImage',
     'excerpt',
   ])
+  const rss = generateRss(allPosts)
+
+  fs.writeFileSync('./public/rss.xml', rss)
 
   return {
     props: { allPosts },
