@@ -8,7 +8,7 @@ export default function Hero() {
       <Link href="/">
         <a>
           <div className="hero-body">
-            <div className="container">
+            <div className="container is-max-desktop">
               <h1 className="title">{BLOG_TITLE}</h1>
               <h2 className="subtitle">{BLOG_SUBTITLE}</h2>
             </div>
