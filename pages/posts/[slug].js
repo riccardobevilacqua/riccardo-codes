@@ -26,7 +26,7 @@ export default function Post({ post }) {
                 <title>
                   {post.title} | {BLOG_TITLE}
                 </title>
-                <meta property="og:image" content={post.ogImage.url} />
+                <meta property="og:image" content={post.ogImage.url} key="feature-image"/>
               </Head>
               <PostHeader
                 title={post.title}
