@@ -13,9 +13,9 @@ ogImage:
 
 ### Why do you need an RSS feed?
 
-Millions of users every day enjoy reading from several websites through a *feed reader*, such as [Feedly](feedly.com/).
+Millions of users every day enjoy reading from several websites through a *feed reader*, such as [Feedly](feedly.com/). You need to provide an RSS feed for your blog not to give up a potentially large share of audience.
 
-You need to provide an RSS feed for your blog not to give up a potentially large share of audience.
+Furthermore you can use your RSS feed to cross-post to other websites, such as the popular [dev.to](https://dev.to/).
 
 ### The Kessel Run in less than twelve parsecs
 
@@ -75,7 +75,7 @@ The mechanism is the following:
 
 ### This is the Way
 
-In `/pages/index.js` there's a method `getStaticProps` which is called by Next.js at build time (see [here](https://nextjs.org/docs/basic-features/data-fetching#getstaticprops-static-generation)).
+In `/pages/index.js` there's a method `getStaticProps` which is called by [Next.js](https://nextjs.org/) at build time (see [here](https://nextjs.org/docs/basic-features/data-fetching#getstaticprops-static-generation)).
 
 The idea is generating the RSS feed as an XML file precisely at build time.
 
@@ -114,7 +114,7 @@ A final touch would be updating your `.gitignore` to exclude `rss.xml`, which do
 
 You can now add a link to `/rss.xml` on your homepage to provide your users with a link they can add to their favorite feed reader.
 
-Moreover on [dev.to](https://dev.to/), in *Settings > Extensions*, you can add a link to your RSS feed for [cross-posting](https://dictionary.cambridge.org/dictionary/english/cross-posting).
+Moreover on [dev.to](https://dev.to/), in *Settings > Extensions*, you specify your RSS feed URL for [cross-posting](https://dictionary.cambridge.org/dictionary/english/cross-posting).
 
 <figure class="image" aria-label="Cross-posting from your blog to dev.to">
 <img
@@ -129,7 +129,7 @@ This way every time you publish on your blog a draft will be automatically creat
 
 ### Conclusion
 
-Next.js is still young and is missing some features, such as RSS feed generation. However its design comprises only a handful of moving parts, hence adjusting it to your needs is more than doable.
+Next.js is still young and is missing some capabilities, such as RSS feed generation. However its design comprises only a handful of moving parts, hence adjusting the project to your needs is quite doable.
 
 I'm fairly sure more features will come in time from Vercel and from Next.js community. Until then don't be afraid to tinker with it.
 
