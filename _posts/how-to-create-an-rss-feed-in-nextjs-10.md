@@ -2,7 +2,7 @@
 title: 'How to create an RSS feed in Next.js 10'
 excerpt: 'In Next.js generating an RSS feed doesn''t come out-of-the-box. This guide will walk you through the short but not so straightforward process to create an RSS feed for your Next.js 10 blog.'
 coverImage: '/assets/blog/how-to-create-an-rss-feed-in-nextjs-10/cover.jpg'
-date: '2020-11-29'
+date: '2020-11-29T05:00:00.000Z'
 ogImage:
   url: '/assets/blog/how-to-create-an-rss-feed-in-nextjs-10/cover.jpg'
 ---
