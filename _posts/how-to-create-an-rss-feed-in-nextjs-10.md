@@ -21,45 +21,16 @@ Furthermore you can use your RSS feed to cross-post to other websites, such as t
 
 Create a file `rss.js` in `lib` folder, or another directory of your preference other than `pages`, which as you probably know is a special directory reserved to routable content.
 
-The new file would look like this:
+The new file would look like this (source [here](https://gist.github.com/riccardobevilacqua/d3820b80718517448d8ad6c8151fc9ac)):
 
-```javascript
-import { BLOG_URL, BLOG_TITLE, BLOG_SUBTITLE} from '@lib/constants'
-import markdownToHtml from '@lib/markdownToHtml'
-
-export async function generateRssItem(post) {
-  const content = await markdownToHtml(post.content || '')
-
-  return `
-    <item>
-      <guid>${BLOG_URL}/posts/${post.slug}</guid>
-      <title>${post.title}</title>
-      <description>${post.excerpt}</description>
-      <link>${BLOG_URL}/posts/${post.slug}</link>
-      <pubDate>${new Date(post.date).toUTCString()}</pubDate>
-      <content:encoded><![CDATA[${content}]]></content:encoded>
-    </item>
-  `
-}
-
-export async function generateRss(posts) {
-  const itemsList = await Promise.all(posts.map(generateRssItem))
-
-  return `
-    <rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0">
-      <channel>
-        <title>${BLOG_TITLE}</title>
-        <link>${BLOG_URL}</link>
-        <description>${BLOG_SUBTITLE}</description>
-        <language>en</language>
-        <lastBuildDate>${new Date(posts[0].date).toUTCString()}</lastBuildDate>
-        <atom:link href="${BLOG_URL}" rel="self" type="application/rss+xml"/>
-        ${itemsList.join('')}
-      </channel>
-    </rss>
-  `
-}
-```
+<figure class="image" aria-label="rss.js">
+<img
+  src="/assets/blog/how-to-create-an-rss-feed-in-nextjs-10/rss-js.jpg"
+  alt="rss.js"
+  style="max-height: 600px;"
+/>
+<figcaption>rss.js</figcaption>
+</figure>
 
 The mechanism is the following:
 
@@ -107,7 +78,7 @@ An RSS feed item, which represents a post on your blog, is structured as follows
 - `description` is the excerpt of the post
 - `link` is the absolute URL of the post, including protocol and base URL of your blog
 - `pubDate` is the date published
-- `content:encoded` is the full content of your post, which applies the encapsulation `<![CDATA[${content}]]>` to assure your HTML to be correctly parsed
+- `content:encoded` is the full content of your post, which applies the encapsulation [CDATA](https://en.wikipedia.org/wiki/CDATA) to assure your HTML to be correctly parsed
 
 You can find a thorough list of properties [here](https://www.rssboard.org/rss-profile).
 
@@ -121,14 +92,9 @@ export async function generateRss(posts) {
 }
 ```
 
-Now that you have all RSS items, you can add some general information to the RSS feed, starting from the root element:
+Now that you have all RSS items, you can add some general information to the RSS feed:
 
-```XML
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0">
-```
-
-Then proceeding with the following:
-
+- `rss` is the root element of the XML document
 - `channel` is an XML element containing the whole blog data, comprising general information and all posts
 - `title` is the title of the blog
 - `description` is the description of the blog
