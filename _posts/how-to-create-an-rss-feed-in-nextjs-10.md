@@ -2,20 +2,20 @@
 title: 'How to create an RSS feed in Next.js 10'
 excerpt: 'In Next.js generating an RSS feed doesn''t come out-of-the-box. This guide will walk you through the short but not so straightforward process to create an RSS feed for your Next.js 10 blog.'
 coverImage: '/assets/blog/how-to-create-an-rss-feed-in-nextjs-10/cover.jpg'
-date: '2020-11-30'
+date: '2020-11-29'
 ogImage:
   url: '/assets/blog/how-to-create-an-rss-feed-in-nextjs-10/cover.jpg'
 ---
 
 ### What is an RSS feed?
 
-[RSS](https://en.wikipedia.org/wiki/RSS) (RDF Site Summary or Really Simple Syndication) is an XML file used for providing users with frequently updated content in a standardized, computer-readable data format.
+[RSS](https://en.wikipedia.org/wiki/RSS) (RDF Site Summary or Really Simple Syndication) feed is an XML file used for providing users with frequently updated content in a standardized, computer-readable data format.
 
 ### Why do you need an RSS feed?
 
-Millions of users every day enjoy reading from several websites through a *feed reader*, such as [Feedly](feedly.com/). You need to provide an RSS feed for your blog not to give up a potentially large share of audience.
+Millions of users every day enjoy reading from several websites through a *feed reader*, such as [Feedly](https://feedly.com/). You need to provide an RSS feed for your blog not to give up a potentially large share of audience.
 
-Furthermore you can use your RSS feed to cross-post to other websites, such as the popular [dev.to](https://dev.to/).
+Furthermore you can use your RSS feed to cross-post to other websites, such as the popular [dev.to](https://dev.to/) (see [here](#cross-posting-from-blog-to-devto)).
 
 ### The Kessel Run in less than twelve parsecs
 
@@ -73,13 +73,11 @@ The mechanism is the following:
     - prepares the structure of an RSS feed item
     - returns the RSS feed item as string
 
-Keep reading for a full explanation.
-
 ### I will help you, I have spoken
 
 *"What's going on in here?"* you might be wondering.
 
-Let's break it down, startin from the imports:
+Let's break it down, starting from the imports:
 
 ```javascript
 import { BLOG_URL, BLOG_TITLE, BLOG_SUBTITLE} from '@lib/constants'
@@ -108,7 +106,7 @@ An RSS feed item, which represents a post on your blog, is structured as follows
 - `title` is the title of the post, of course
 - `description` is the excerpt of the post
 - `link` is the absolute URL of the post, including protocol and base URL of your blog
-- `pubDate` is the publish date of the post
+- `pubDate` is the date published
 - `content:encoded` is the full content of your post, which applies the encapsulation `<![CDATA[${content}]]>` to assure your HTML to be correctly parsed
 
 You can find a thorough list of properties [here](https://www.rssboard.org/rss-profile).
@@ -131,7 +129,7 @@ Now that you have all RSS items, you can add some general information to the RSS
 
 Then proceeding with the following:
 
-- `channel` is an XML element containing the whole blog, comprising general information and all posts
+- `channel` is an XML element containing the whole blog data, comprising general information and all posts
 - `title` is the title of the blog
 - `description` is the description of the blog
 - `lastBuildDate` is the date of the most recent post
@@ -143,9 +141,9 @@ Finally you can inject the RSS items generated in the previous step.
 
 In `/pages/index.js` there's a method `getStaticProps`, which is called by [Next.js](https://nextjs.org/) at build time (see [here](https://nextjs.org/docs/basic-features/data-fetching#getstaticprops-static-generation)).
 
-The idea is generating the RSS feed as an XML file precisely at build time.
+The idea is generating your RSS feed as an XML file precisely at build time.
 
-To do so, first import `generateRss`, then modify `getStaticProps` as follows:
+To do so, first import `generateRss` and `fs`, then modify `getStaticProps` as follows:
 
 ```javascript
 export async function getStaticProps() {
@@ -170,8 +168,8 @@ export async function getStaticProps() {
 
 A few tweaks have been introduced:
 
-- adding `content` to the array of fields passed to `getAllPosts`
-- generating the RSS using `const rss = await generateRss(allPosts)`
+- adding `content` to the array of fields passed to `getAllPosts`, used by `generateRssItem` to inject the full content of a post
+- generating your RSS using `const rss = await generateRss(allPosts)`
 - writing the result in an XML file, which **must** be placed in the `public` folder to be reachable by users and applications
 
 A final touch would be updating your `.gitignore` to exclude `rss.xml`, which doesn't really need to be versioned.
@@ -181,6 +179,8 @@ An example of the final result is the [RSS feed I generated for this very blog](
 ### Who controls the spice controls the universe
 
 You can now add a link to `/rss.xml` on your homepage to provide your users with a link they can add to their favorite feed reader.
+
+<a id="cross-posting-from-blog-to-devto"></a>
 
 Moreover on [dev.to](https://dev.to/), in *Settings > Extensions*, you can specify your RSS feed URL for [cross-posting](https://dictionary.cambridge.org/dictionary/english/cross-posting).
 
@@ -197,10 +197,9 @@ This way every time you publish on your blog `main` branch, a draft will be auto
 
 ### Conclusion
 
-Next.js is still young and is missing some capabilities, such as RSS feed generation. However its design comprises only a handful of moving parts, hence adjusting the project to your needs is quite doable.
+Next.js is still young and is missing some capabilities, such as RSS feed generation. However its design comprises only a handful of moving parts, which makes adjusting the project to meet your needs quite doable.
 
 I'm fairly sure more features will come in time from Vercel and from Next.js community. Until then, don't be afraid to tinker with it.
 
-> Your assumptions are your windows on the world.  
-> Scrub them off every once in a while, or the light won't come in.  
-― Isaac Asimov
+> Somewhere, something incredible is waiting to be known.  
+― Carl Sagan
