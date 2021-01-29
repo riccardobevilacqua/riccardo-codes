@@ -1,8 +1,8 @@
 ---
 title: "How to build a Discord bot with Discord.js"
-excerpt: "In Next.js generating an RSS feed doesn't come out-of-the-box. This guide will walk you through the short but not so straightforward process to create an RSS feed for your Next.js 10 blog."
+excerpt: "Discord has come far and it's much more than a voice chat for gamers nowadays. Learn to leverage its full potential by building a bot with Discord.js and give your online community the best user experience."
 coverImage: "/assets/blog/how-to-build-a-discord-bot-with-discordjs/cover.jpg"
-date: "2021-01-23T01:00:00.000Z"
+date: "2021-01-31T01:00:00.000Z"
 ogImage:
   url: "/assets/blog/how-to-build-a-discord-bot-with-discordjs/cover.jpg"
 ---
