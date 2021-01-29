@@ -9,15 +9,22 @@ ogImage:
 
 ### What is Discord?
 
-[Discord](https://en.wikipedia.org/wiki/RSS) (RDF Site Summary or Really Simple Syndication) feed is an XML file used for providing users with frequently updated content in a standardized, computer-readable data format.
+[Discord](https://discord.com/) is:
 
-### Why do you need an RSS feed?
+> A VoIP, instant messaging and digital distribution platform designed for creating communities. Users communicate with voice calls, video calls, text messaging, media and files in private chats or as part of communities called "servers." Servers are a collection of persistent chat rooms and voice chat channels.
 
-Millions of users every day enjoy reading from several websites through a _feed reader_, such as [Feedly](https://feedly.com/). You need to provide an RSS feed for your blog not to give up a potentially large share of audience.
+Source: [Wikipedia](<https://en.wikipedia.org/wiki/Discord_(software)>).
 
-Furthermore you can use your RSS feed to cross-post to other websites, such as the popular [dev.to](https://dev.to/) (see [here](#cross-posting-from-blog-to-devto)).
+### Why should you learn Discord bots?
 
-### The Kessel Run in less than twelve parsecs
+Discord was born for gamers who need an efficient and reliable way to communicate, through voice and chat alike.
+In recent years its popularity grew outside of gaming community and these proving covid times accelerated Discord adoption in any kind of community.
+
+Discord bots are applications which can perform automated tasks on your server, such as welcoming new members, moderating content, even playing music.
+
+Official Discord APIs are accessible in multiple programming languages, including JavaScript, allowing you to create any sort of bot to give your online community a compelling user experience. Moreover, the possibility to integrate third party APIs opens a universe limited only by your imagination.
+
+### You have only begun to discover your power
 
 Create a file `rss.js` in `lib` folder, or another directory of your preference other than `pages`, which as you probably know is a special directory reserved to routable content.
 
