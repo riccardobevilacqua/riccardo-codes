@@ -111,13 +111,20 @@ This is the reason why your workflow will be:
 - Run your bot locally
 - Manually test your bot on the server, not ideal but there isn't currently a better way
 
+### I’m sorry, lady, I don’t understand frog
+
 Let's start by creating a project with basic dependencies:
 
 1. Create a folder in a path of your choosing.
-1. Initialize by running `npm init`.
-1. `npm i discordjs`, your bread and butter from now on.
+1. Initialize your project by running `npm init -y`.
+1. Alter `package.json` as you see fit (optional).
+1. `npm i discord.js`, your bread and butter from now on.
 1. `npm i dotenv`, to handle environments comfortably using a `.env` file.
 1. `npm i -D nodemon`, to apply source code changes right away by automatically restarting your bot.
+1. Create a `.gitignore` file with at the very least the following content: 
+> node_modules  
+> .env
+1. Initialize the repository by running `git init`.
 1. Feel free to add [ESLint](https://eslint.org/) and any other auxiliary tool you like to work with.
 
 
