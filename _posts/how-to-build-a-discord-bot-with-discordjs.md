@@ -125,7 +125,65 @@ Let's start by creating a project with basic dependencies:
 > node_modules  
 > .env
 1. Initialize the repository by running `git init`.
-1. Feel free to add [ESLint](https://eslint.org/) and any other auxiliary tool you like to work with.
+
+Feel free to add [ESLint](https://eslint.org/) and any other auxiliary tool you like to work with.
+
+### There you will find Ahsoka Tano
+
+You're going to write some code to interact with your bot.
+
+In the root folder of your project create an `index.js` file with the following content:
+
+```javascript
+const Dotenv = require('dotenv');
+const Discord = require('discord.js');
+
+Dotenv.config();
+
+const client = new Discord.Client();
+
+const commandPrefix = '!ex';
+
+client.once('ready', () => console.log('Ready!'));
+
+client.on('message', message => {
+    if (message?.content === `${commandPrefix} hello there`) {
+        message.channel.send('General Kenobi');
+    }
+});
+
+client.login(process.env.BOT_TOKEN);
+```
+
+Let's take a closer look:
+
+- `Dotenv.config()` loads the content of `.env` file, populating environment variables.
+- `new Discord.Client()` as you guessed creates an instance of client provided by Discord.js, your bot basically _is_ this client.
+- `const commandPrefix = '!ex'`, it's quite common for bots accepting commands to tell them apart from regular text messages with this trick.
+- `client.once('ready', () => //...)` is an event triggered when your bot is up and running.
+- `client.on('message', message => //...)` is an event triggered when _any_ message is sent to a text channel.
+- `client.login(process.env.BOT_TOKEN)` allows your bot to access Discord network using its token, which for local development is fetched from the `.env` file while in production will be fetched from environment variables added to your hosting service (e.g. Heroku).
+
+The following block represents a command issued to your bot, which will reply to the greeting:
+
+```javascript
+if (message?.content === `${commandPrefix} hello there`) {
+    message.channel.send('General Kenobi');
+}
+```
+
+The final results looks like this:
+
+<figure class="image" aria-label="Discord bot - Command example">
+<img
+  src="/assets/blog/how-to-build-a-discord-bot-with-discordjs/discord-app-command-example.jpg"
+  alt="Discord bot - Command example"
+  style="max-height: 600px;"
+/>
+<figcaption>Discord bot - Command example</figcaption>
+</figure>
+
+### Tell her you were sent by Bo-Katan
 
 
 ### Conclusion
