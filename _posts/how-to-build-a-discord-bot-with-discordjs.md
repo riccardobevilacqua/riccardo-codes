@@ -162,7 +162,7 @@ Let's take a closer look:
 - `const commandPrefix = '!ex'`, it's quite common for bots accepting commands to tell them apart from regular text messages with this trick.
 - `client.once('ready', () => //...)` is an event triggered when your bot is up and running.
 - `client.on('message', message => //...)` is an event triggered when _any_ message is sent to a text channel.
-- `client.login(process.env.BOT_TOKEN)` allows your bot to access Discord network using its token, which for local development is fetched from the `.env` file while in production will be fetched from environment variables added to your hosting service (e.g. Heroku).
+- `client.login(process.env.BOT_TOKEN)` allows your bot to access Discord network using its token, which for local development is fetched from the `.env` file while in production will be fetched from environment variables added to your hosting service (e.g. [Heroku](https://www.heroku.com/)).
 
 The following block represents a command issued to your bot, which will reply to the greeting:
 
