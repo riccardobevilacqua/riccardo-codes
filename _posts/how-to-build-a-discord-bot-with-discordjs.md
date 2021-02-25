@@ -85,7 +85,7 @@ Navigate to the _Bot_ section, then click _Add Bot_.
 <figcaption>Discord dashboard - Add Bot</figcaption>
 </figure>
 
-This is how your bot overview looks like.
+This is how your bot overview looks like:
 
 <figure class="image" aria-label="Discord dashboard - Bot overview">
 <img
@@ -127,6 +127,8 @@ Let's start by creating a project with basic dependencies:
 1. Initialize the repository by running `git init`.
 
 Feel free to add [ESLint](https://eslint.org/) and any other auxiliary tool you like to work with.
+
+Check out the [source code on GitHub](https://github.com/riccardobevilacqua/discord-bot-example) for reference.
 
 ### There you will find Ahsoka Tano
 
@@ -172,7 +174,7 @@ if (message?.content === `${commandPrefix} hello there`) {
 }
 ```
 
-The final results looks like this:
+The final result looks like this:
 
 <figure class="image" aria-label="Discord bot - Command example">
 <img
